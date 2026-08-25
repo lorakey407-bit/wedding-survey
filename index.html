@@ -328,26 +328,25 @@
 
     const alcohols = Array.from(document.querySelectorAll('input[name="alcohol"]:checked')).map(cb => cb.value);
 
-    const payload = {
-      access_key: '1450d447-ce90-4977-aadc-98df1020c9c6',
-      subject: 'Новый ответ гостя — Алёна & Роман',
-      name: name,
-      email: this.querySelector('input[name="email"]').value.trim() || 'не указан',
-      hot_dish: food.value,
-      alcohol: alcohols.length > 0 ? alcohols.join(', ') : 'не выбрано'
-    };
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', this.querySelector('input[name="email"]').value.trim() || 'не указан');
+    formData.append('Горячее', food.value);
+    formData.append('Алкоголь', alcohols.length > 0 ? alcohols.join(', ') : 'не выбрано');
+    formData.append('_subject', 'Новый ответ гостя — Алёна и Роман!');
+    formData.append('_captcha', 'false');
+    formData.append('_template', 'table');
 
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('https://formsubmit.co/ajax/lorakey407@gmail.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
+        body: formData
       });
 
       const data = await res.json();
       const msgBox = document.getElementById('form-message');
 
-      if (data.success) {
+      if (data.success === 'true' || data.success === true) {
         document.getElementById('msg-icon').textContent = '💌';
         document.getElementById('msg-title').textContent = 'Спасибо, ' + name + '!';
         document.getElementById('msg-body').textContent = 'Ваши предпочтения записаны. До встречи на торжестве! 🥂';
@@ -360,7 +359,8 @@
     } catch(err) {
       btn.disabled = false;
       btn.textContent = 'Попробовать снова';
-      alert('Ошибка отправки. Пожалуйста, попробуйте ещё раз.');
+      document.getElementById('val-msg').textContent = '⚠️ Ошибка отправки. Попробуйте ещё раз.';
+      document.getElementById('val-msg').classList.add('visible');
     }
   });
 </script>
