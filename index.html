@@ -117,7 +117,11 @@
 </head>
 <body>
 
-<form id="guestForm">
+<form id="guestForm" action="https://formsubmit.co/lorakey407@gmail.com" method="POST">
+  <input type="hidden" name="_next" value="https://lorakey407-bit.github.io/wedding-survey/thanks.html">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="🎊 Новый ответ гостя — Алёна и Роман!">
+  <input type="hidden" name="_template" value="table">
 
 <div class="hero" id="top">
   <div class="petals" id="petals"></div>
@@ -253,7 +257,7 @@
   <h2 class="submit-title">Всё готово!</h2>
   <p class="submit-sub">Отправьте ваши предпочтения — мы обо всём позаботимся</p>
   <div class="validation-msg" id="val-msg">⚠️ Пожалуйста, заполните все поля: укажите имя и выберите горячее</div>
-  <button type="submit" class="submit-btn" id="submit-btn">
+  <button type="submit" class="submit-btn">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
     Отправить ответы
   </button>
@@ -308,16 +312,16 @@
     });
   });
 
-  document.getElementById('guestForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
+  document.getElementById('guestForm').addEventListener('submit', function(e) {
     const name = this.querySelector('input[name="name"]').value.trim();
     const food = this.querySelector('input[name="hot_dish"]:checked');
     const valMsg = document.getElementById('val-msg');
-
     if (!name || !food) {
+      e.preventDefault();
       valMsg.classList.add('visible');
       document.getElementById('guest-form').scrollIntoView({ behavior: 'smooth' });
+    }
+  });
       return;
     }
     valMsg.classList.remove('visible');
