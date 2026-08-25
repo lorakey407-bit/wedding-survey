@@ -17,21 +17,10 @@
       --glass-alc: rgba(255,255,255,0.06);
     }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 400;
-      color: #fff;
-      overflow-x: hidden;
-    }
+    body { font-family: 'Raleway', sans-serif; font-weight: 400; color: #fff; overflow-x: hidden; }
     .hero {
       min-height: 100vh;
-      background:
-        linear-gradient(to bottom,
-          rgba(15,2,20,0.62) 0%,
-          rgba(30,5,35,0.45) 40%,
-          rgba(10,0,15,0.72) 100%
-        ),
-        linear-gradient(160deg, #1A0310 0%, #3D0A1F 35%, #6B1F38 65%, #3A0D1A 100%);
+      background: linear-gradient(to bottom, rgba(15,2,20,0.62) 0%, rgba(30,5,35,0.45) 40%, rgba(10,0,15,0.72) 100%), linear-gradient(160deg, #1A0310 0%, #3D0A1F 35%, #6B1F38 65%, #3A0D1A 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -42,411 +31,73 @@
       overflow: hidden;
     }
     .petals { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-    .petal {
-      position: absolute;
-      width: 8px; height: 8px;
-      background: var(--gold-dim);
-      border-radius: 50% 0 50% 0;
-      animation: floatPetal linear infinite;
-      opacity: 0;
-    }
+    .petal { position: absolute; width: 8px; height: 8px; background: var(--gold-dim); border-radius: 50% 0 50% 0; animation: floatPetal linear infinite; opacity: 0; }
     @keyframes floatPetal {
-      0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-      10%  { opacity: 0.6; }
-      90%  { opacity: 0.3; }
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.3; }
       100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
     }
     .rings-svg { margin-bottom: 28px; filter: drop-shadow(0 0 18px rgba(201,168,76,0.5)); }
-    .hero-eyebrow {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      font-size: 13px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(48px, 10vw, 88px);
-      font-weight: 700;
-      line-height: 1.05;
-      color: #fff;
-      text-shadow: 0 4px 40px rgba(107,31,56,0.8);
-      margin-bottom: 10px;
-    }
-    .hero-title em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
-    .hero-date {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 22px;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 28px;
-    }
-    .hero-divider {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-    .hero-divider span {
-      display: block;
-      width: 80px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-    .hero-sub {
-      font-size: 17px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.75);
-      max-width: 520px;
-      line-height: 1.7;
-      margin-bottom: 48px;
-    }
-    .scroll-hint {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      animation: bounce 2s ease-in-out infinite;
-      color: var(--gold);
-      font-size: 12px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-    @keyframes bounce {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(8px); }
-    }
-    .guest-section {
-      background: var(--ivory);
-      padding: 64px 24px 48px;
-      text-align: center;
-    }
-    .guest-section .section-label {
-      color: var(--gold);
-      font-size: 12px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .guest-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 30px;
-      color: var(--text-dark);
-      margin-bottom: 32px;
-    }
-    .guest-fields {
-      display: flex;
-      gap: 16px;
-      max-width: 560px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
-    .guest-fields input {
-      flex: 1;
-      min-width: 220px;
-      padding: 14px 20px;
-      border: 1.5px solid rgba(107,31,56,0.2);
-      border-radius: 10px;
-      font-family: 'Raleway', sans-serif;
-      font-size: 15px;
-      color: var(--text-dark);
-      background: #fff;
-      outline: none;
-      transition: border-color 0.2s;
-    }
+    .hero-eyebrow { font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 13px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(48px, 10vw, 88px); font-weight: 700; line-height: 1.05; color: #fff; text-shadow: 0 4px 40px rgba(107,31,56,0.8); margin-bottom: 10px; }
+    .hero-title em { font-style: italic; color: var(--gold-light); }
+    .hero-date { font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; color: rgba(255,255,255,0.65); margin-bottom: 28px; }
+    .hero-divider { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+    .hero-divider span { display: block; width: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .hero-sub { font-size: 17px; font-weight: 300; color: rgba(255,255,255,0.75); max-width: 520px; line-height: 1.7; margin-bottom: 48px; }
+    .scroll-hint { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; animation: bounce 2s ease-in-out infinite; color: var(--gold); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; }
+    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+    .guest-section { background: var(--ivory); padding: 64px 24px 48px; text-align: center; }
+    .guest-section .section-label { color: var(--gold); font-size: 12px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 12px; }
+    .guest-section h2 { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--text-dark); margin-bottom: 32px; }
+    .guest-fields { display: flex; gap: 16px; max-width: 560px; margin: 0 auto; flex-wrap: wrap; }
+    .guest-fields input { flex: 1; min-width: 220px; padding: 14px 20px; border: 1.5px solid rgba(107,31,56,0.2); border-radius: 10px; font-family: 'Raleway', sans-serif; font-size: 15px; color: var(--text-dark); background: #fff; outline: none; transition: border-color 0.2s; }
     .guest-fields input:focus { border-color: var(--gold); }
     .guest-fields input::placeholder { color: #aaa; }
-    .food-section {
-      padding: 72px 24px 80px;
-      background:
-        radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.1) 0%, transparent 60%),
-        linear-gradient(150deg, #1C0A06 0%, #3B1408 30%, #6B2A1E 60%, #8B4513 100%);
-      text-align: center;
-    }
-    .section-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(201,168,76,0.15);
-      border: 1px solid var(--gold-dim);
-      border-radius: 30px;
-      padding: 6px 18px;
-      font-size: 12px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 20px;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 5vw, 44px);
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 12px;
-    }
-    .section-sub {
-      font-size: 16px;
-      font-weight: 300;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 48px;
-    }
-    .food-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 780px;
-      margin: 0 auto;
-    }
-    .food-card {
-      background: var(--glass-food);
-      border: 1.5px solid rgba(201,168,76,0.2);
-      border-radius: 20px;
-      padding: 36px 24px 28px;
-      cursor: pointer;
-      transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
-      user-select: none;
-      backdrop-filter: blur(8px);
-      position: relative;
-      overflow: hidden;
-    }
-    .food-card:hover {
-      border-color: rgba(201,168,76,0.5);
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
-    }
-    .food-card.selected {
-      border-color: var(--gold);
-      background: rgba(201,168,76,0.18);
-      box-shadow: 0 0 0 1px var(--gold), 0 0 30px rgba(201,168,76,0.3), 0 16px 40px rgba(0,0,0,0.4);
-      transform: translateY(-6px) scale(1.02);
-    }
+    .food-section { padding: 72px 24px 80px; background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.1) 0%, transparent 60%), linear-gradient(150deg, #1C0A06 0%, #3B1408 30%, #6B2A1E 60%, #8B4513 100%); text-align: center; }
+    .section-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,0.15); border: 1px solid var(--gold-dim); border-radius: 30px; padding: 6px 18px; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 20px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 44px); font-weight: 600; color: #fff; margin-bottom: 12px; }
+    .section-sub { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.65); margin-bottom: 48px; }
+    .food-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 780px; margin: 0 auto; }
+    .food-card { background: var(--glass-food); border: 1.5px solid rgba(201,168,76,0.2); border-radius: 20px; padding: 36px 24px 28px; cursor: pointer; transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1); user-select: none; backdrop-filter: blur(8px); position: relative; overflow: hidden; }
+    .food-card:hover { border-color: rgba(201,168,76,0.5); transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+    .food-card.selected { border-color: var(--gold); background: rgba(201,168,76,0.18); box-shadow: 0 0 0 1px var(--gold), 0 0 30px rgba(201,168,76,0.3), 0 16px 40px rgba(0,0,0,0.4); transform: translateY(-6px) scale(1.02); }
     .food-icon { font-size: 52px; display: block; margin-bottom: 16px; line-height: 1; }
-    .food-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-    .food-desc {
-      font-size: 13px;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.5;
-    }
-    .selected-badge {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      width: 24px;
-      height: 24px;
-      background: var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transform: scale(0);
-      transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
-    }
-    .food-card.selected .selected-badge,
-    .alc-card.selected .selected-badge {
-      opacity: 1;
-      transform: scale(1);
-    }
+    .food-name { font-family: 'Playfair Display', serif; font-size: 22px; color: #fff; margin-bottom: 8px; }
+    .food-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+    .selected-badge { position: absolute; top: 14px; right: 14px; width: 24px; height: 24px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(0); transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1); }
+    .food-card.selected .selected-badge, .alc-card.selected .selected-badge { opacity: 1; transform: scale(1); }
     input[type="radio"], input[type="checkbox"] { display: none; }
-    .divider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      height: 0;
-      position: relative;
-      z-index: 10;
-    }
-    .divider-inner {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      background: #1A0820;
-      padding: 16px 40px;
-      border-radius: 50px;
-      border: 1px solid rgba(201,168,76,0.3);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-      position: relative;
-      top: 0;
-    }
+    .divider { display: flex; align-items: center; justify-content: center; padding: 0; height: 0; position: relative; z-index: 10; }
+    .divider-inner { display: flex; align-items: center; gap: 20px; background: #1A0820; padding: 16px 40px; border-radius: 50px; border: 1px solid rgba(201,168,76,0.3); box-shadow: 0 8px 32px rgba(0,0,0,0.5); position: relative; top: 0; }
     .divider-line { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-    .alc-section {
-      padding: 80px 24px 80px;
-      background:
-        radial-gradient(ellipse at 70% 30%, rgba(89,0,140,0.2) 0%, transparent 50%),
-        radial-gradient(ellipse at 20% 80%, rgba(0,40,100,0.3) 0%, transparent 50%),
-        linear-gradient(160deg, #050510 0%, #0A0A20 40%, #100020 70%, #0A0010 100%);
-      text-align: center;
-    }
+    .alc-section { padding: 80px 24px 80px; background: radial-gradient(ellipse at 70% 30%, rgba(89,0,140,0.2) 0%, transparent 50%), radial-gradient(ellipse at 20% 80%, rgba(0,40,100,0.3) 0%, transparent 50%), linear-gradient(160deg, #050510 0%, #0A0A20 40%, #100020 70%, #0A0010 100%); text-align: center; }
     .sparkles { position: absolute; inset: 0; pointer-events: none; }
-    .sparkle {
-      position: absolute;
-      width: 2px; height: 2px;
-      background: var(--gold-light);
-      border-radius: 50%;
-      animation: twinkle ease-in-out infinite;
-    }
-    @keyframes twinkle {
-      0%,100% { opacity: 0; transform: scale(0.5); }
-      50% { opacity: 1; transform: scale(1.5); }
-    }
-    .alc-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
-      gap: 16px;
-      max-width: 880px;
-      margin: 0 auto;
-    }
-    .alc-card {
-      background: var(--glass-alc);
-      border: 1.5px solid rgba(201,168,76,0.15);
-      border-radius: 16px;
-      padding: 24px 16px 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      user-select: none;
-      backdrop-filter: blur(8px);
-      position: relative;
-    }
-    .alc-card:hover {
-      border-color: rgba(201,168,76,0.4);
-      background: rgba(201,168,76,0.08);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
-    }
-    .alc-card.selected {
-      border-color: var(--gold);
-      background: rgba(201,168,76,0.15);
-      box-shadow: 0 0 0 1px var(--gold), 0 0 25px rgba(201,168,76,0.25), 0 12px 30px rgba(0,0,0,0.5);
-      transform: translateY(-4px);
-    }
+    .sparkle { position: absolute; width: 2px; height: 2px; background: var(--gold-light); border-radius: 50%; animation: twinkle ease-in-out infinite; }
+    @keyframes twinkle { 0%,100% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1.5); } }
+    .alc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 16px; max-width: 880px; margin: 0 auto; }
+    .alc-card { background: var(--glass-alc); border: 1.5px solid rgba(201,168,76,0.15); border-radius: 16px; padding: 24px 16px 20px; cursor: pointer; transition: all 0.3s ease; user-select: none; backdrop-filter: blur(8px); position: relative; }
+    .alc-card:hover { border-color: rgba(201,168,76,0.4); background: rgba(201,168,76,0.08); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
+    .alc-card.selected { border-color: var(--gold); background: rgba(201,168,76,0.15); box-shadow: 0 0 0 1px var(--gold), 0 0 25px rgba(201,168,76,0.25), 0 12px 30px rgba(0,0,0,0.5); transform: translateY(-4px); }
     .alc-icon { font-size: 38px; display: block; margin-bottom: 12px; }
-    .alc-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-    .alc-sub {
-      font-size: 12px;
-      color: rgba(255,255,255,0.45);
-    }
-    .no-alc-note {
-      margin-top: 32px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.45);
-    }
-    .submit-section {
-      padding: 64px 24px 80px;
-      background: linear-gradient(0deg, #0A0010 0%, #100020 100%);
-      text-align: center;
-    }
-    .submit-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .submit-sub {
-      font-size: 15px;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 36px;
-    }
-    .submit-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: linear-gradient(135deg, #C9A84C, #E8CC7A, #C9A84C);
-      background-size: 200% 100%;
-      color: #1A0310;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 18px 52px;
-      border: none;
-      border-radius: 60px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 30px rgba(201,168,76,0.4);
-    }
-    .submit-btn:hover {
-      background-position: 100% 0;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(201,168,76,0.55);
-    }
+    .alc-name { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+    .alc-sub { font-size: 12px; color: rgba(255,255,255,0.45); }
+    .no-alc-note { margin-top: 32px; font-size: 14px; color: rgba(255,255,255,0.45); }
+    .submit-section { padding: 64px 24px 80px; background: linear-gradient(0deg, #0A0010 0%, #100020 100%); text-align: center; }
+    .submit-title { font-family: 'Playfair Display', serif; font-size: 28px; color: #fff; margin-bottom: 10px; }
+    .submit-sub { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 36px; }
+    .submit-btn { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #C9A84C, #E8CC7A, #C9A84C); background-size: 200% 100%; color: #1A0310; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; padding: 18px 52px; border: none; border-radius: 60px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 8px 30px rgba(201,168,76,0.4); }
+    .submit-btn:hover { background-position: 100% 0; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.55); }
     .submit-btn:active { transform: translateY(0); }
-    .submit-btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-      transform: none;
-    }
-    .privacy-note {
-      margin-top: 20px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.3);
-    }
-    #form-message {
-      display: none;
-      margin-top: 32px;
-      padding: 24px 32px;
-      border-radius: 16px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 16px;
-    }
-    #form-message.success {
-      display: block;
-      background: rgba(201,168,76,0.15);
-      border: 1px solid var(--gold);
-      color: var(--gold-light);
-    }
-    #form-message.error {
-      display: block;
-      background: rgba(200,50,50,0.15);
-      border: 1px solid rgba(200,50,50,0.5);
-      color: #ff9999;
-    }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .privacy-note { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,0.3); }
+    #form-message { display: none; margin-top: 32px; padding: 24px 32px; border-radius: 16px; max-width: 500px; margin-left: auto; margin-right: auto; font-size: 16px; }
+    #form-message.success { display: block; background: rgba(201,168,76,0.15); border: 1px solid var(--gold); color: var(--gold-light); }
     #form-message .msg-icon { font-size: 40px; display: block; margin-bottom: 12px; }
-    #form-message .msg-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-    .footer {
-      background: #050508;
-      padding: 32px 24px;
-      text-align: center;
-      font-size: 13px;
-      color: rgba(255,255,255,0.2);
-    }
-    .validation-msg {
-      background: rgba(255,100,100,0.1);
-      border: 1px solid rgba(255,100,100,0.3);
-      color: #ffaaaa;
-      border-radius: 10px;
-      padding: 12px 20px;
-      font-size: 14px;
-      margin-top: 24px;
-      display: none;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    #form-message .msg-title { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 8px; }
+    .footer { background: #050508; padding: 32px 24px; text-align: center; font-size: 13px; color: rgba(255,255,255,0.2); }
+    .validation-msg { background: rgba(255,100,100,0.1); border: 1px solid rgba(255,100,100,0.3); color: #ffaaaa; border-radius: 10px; padding: 12px 20px; font-size: 14px; margin-top: 24px; display: none; max-width: 500px; margin-left: auto; margin-right: auto; }
     .validation-msg.visible { display: block; }
     @media (max-width: 640px) {
       .food-grid { grid-template-columns: 1fr; max-width: 320px; }
@@ -459,7 +110,7 @@
 </head>
 <body>
 
-<form id="guestForm" action="https://formspree.io/f/xnpaejwy" method="POST">
+<form id="guestForm" action="https://formspree.io/f/xnpaejwy" method="POST" enctype="multipart/form-data">
 
 <div class="hero" id="top">
   <div class="petals" id="petals"></div>
@@ -493,8 +144,8 @@
   <p class="section-label">Шаг 1 из 3</p>
   <h2>Как вас зовут?</h2>
   <div class="guest-fields">
-    <input type="text" id="guest-name" name="name" placeholder="Ваше имя" required>
-    <input type="email" id="guest-email" name="email" placeholder="Email (необязательно)">
+    <input type="text" name="name" placeholder="Ваше имя" required>
+    <input type="email" name="email" placeholder="Email (необязательно)">
   </div>
 </section>
 
@@ -503,21 +154,21 @@
   <h2 class="section-title">Что вы предпочитаете на горячее?</h2>
   <p class="section-sub">Выберите один вариант — мы постараемся учесть всё</p>
   <div class="food-grid" id="food-grid">
-    <label class="food-card" data-value="meat">
+    <label class="food-card">
       <input type="radio" name="hot_dish" value="Мясо" required>
       <div class="selected-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
       <span class="food-icon">🥩</span>
       <div class="food-name">Мясо</div>
       <div class="food-desc">Говядина, свинина<br>или баранина</div>
     </label>
-    <label class="food-card" data-value="chicken">
+    <label class="food-card">
       <input type="radio" name="hot_dish" value="Курица" required>
       <div class="selected-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
       <span class="food-icon">🍗</span>
       <div class="food-name">Курица</div>
       <div class="food-desc">Запечённая или<br>на гриле</div>
     </label>
-    <label class="food-card" data-value="fish">
+    <label class="food-card">
       <input type="radio" name="hot_dish" value="Рыба" required>
       <div class="selected-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
       <span class="food-icon">🐟</span>
@@ -543,104 +194,20 @@
   <h2 class="section-title">Что вы будете пить?</h2>
   <p class="section-sub">Можно выбрать несколько вариантов</p>
   <div class="alc-grid" id="alc-grid">
-    <label class="alc-card" data-value="champagne">
-      <input type="checkbox" name="alcohol" value="Шампанское/Игристое">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🥂</span>
-      <div class="alc-name">Шампанское</div>
-      <div class="alc-sub">Игристое вино</div>
-    </label>
-    <label class="alc-card" data-value="red-wine">
-      <input type="checkbox" name="alcohol" value="Красное вино">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🍷</span>
-      <div class="alc-name">Красное вино</div>
-      <div class="alc-sub">Сухое, полусухое</div>
-    </label>
-    <label class="alc-card" data-value="white-wine">
-      <input type="checkbox" name="alcohol" value="Белое вино">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🫗</span>
-      <div class="alc-name">Белое вино</div>
-      <div class="alc-sub">Сухое, полусухое</div>
-    </label>
-    <label class="alc-card" data-value="rose-wine">
-      <input type="checkbox" name="alcohol" value="Розовое вино">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🌸</span>
-      <div class="alc-name">Розовое вино</div>
-      <div class="alc-sub">Лёгкое, фруктовое</div>
-    </label>
-    <label class="alc-card" data-value="vodka">
-      <input type="checkbox" name="alcohol" value="Водка">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🧊</span>
-      <div class="alc-name">Водка</div>
-      <div class="alc-sub">Классическая</div>
-    </label>
-    <label class="alc-card" data-value="whisky">
-      <input type="checkbox" name="alcohol" value="Виски">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🥃</span>
-      <div class="alc-name">Виски</div>
-      <div class="alc-sub">Шотландский, бурбон</div>
-    </label>
-    <label class="alc-card" data-value="cognac">
-      <input type="checkbox" name="alcohol" value="Коньяк/Бренди">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🍊</span>
-      <div class="alc-name">Коньяк</div>
-      <div class="alc-sub">Бренди, арманьяк</div>
-    </label>
-    <label class="alc-card" data-value="rum">
-      <input type="checkbox" name="alcohol" value="Ром">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🍹</span>
-      <div class="alc-name">Ром</div>
-      <div class="alc-sub">Белый, тёмный</div>
-    </label>
-    <label class="alc-card" data-value="gin">
-      <input type="checkbox" name="alcohol" value="Джин">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🌿</span>
-      <div class="alc-name">Джин</div>
-      <div class="alc-sub">Лондон Драй, крафт</div>
-    </label>
-    <label class="alc-card" data-value="tequila">
-      <input type="checkbox" name="alcohol" value="Текила">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🌵</span>
-      <div class="alc-name">Текила</div>
-      <div class="alc-sub">Серебряная, золотая</div>
-    </label>
-    <label class="alc-card" data-value="beer-light">
-      <input type="checkbox" name="alcohol" value="Пиво светлое">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🍺</span>
-      <div class="alc-name">Пиво светлое</div>
-      <div class="alc-sub">Лагер, пилснер</div>
-    </label>
-    <label class="alc-card" data-value="beer-dark">
-      <input type="checkbox" name="alcohol" value="Пиво тёмное">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🍻</span>
-      <div class="alc-name">Пиво тёмное</div>
-      <div class="alc-sub">Портер, стаут</div>
-    </label>
-    <label class="alc-card" data-value="liqueur">
-      <input type="checkbox" name="alcohol" value="Ликёр/Аперитив">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🍑</span>
-      <div class="alc-name">Ликёр</div>
-      <div class="alc-sub">Амаретто, Апероль</div>
-    </label>
-    <label class="alc-card" data-value="none">
-      <input type="checkbox" name="alcohol" value="Не пью алкоголь">
-      <div class="selected-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A0310" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <span class="alc-icon">🥤</span>
-      <div class="alc-name">Не пью</div>
-      <div class="alc-sub">Безалкогольное</div>
-    </label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Шампанское"><div class="selected-badge">✓</div><span class="alc-icon">🥂</span><div class="alc-name">Шампанское</div><div class="alc-sub">Игристое вино</div></label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Красное вино"><div class="selected-badge">✓</div><span class="alc-icon">🍷</span><div class="alc-name">Красное вино</div><div class="alc-sub">Сухое, полусухое</div></label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Белое вино"><div class="selected-badge">✓</div><span class="alc-icon">🫗</span><div class="alc-name">Белое вино</div><div class="alc-sub">Сухое, полусухое</div></label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Розовое вино"><div class="selected-badge">✓</div><span class="alc-icon">🌸</span><div class="alc-name">Розовое вино</div><div class="alc-sub">Лёгкое, фруктовое</div></label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Водка"><div class="selected-badge">✓</div><span class="alc-icon">🧊</span><div class="alc-name">Водка</div><div class="alc-sub">Классическая</div></label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Виски"><div class="selected-badge">✓</div><span class="alc-icon">🥃</span><div class="alc-name">Виски</div><div class="alc-sub">Шотландский, бурбон</div></label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Коньяк"><div class="selected-badge">✓</div><span class="alc-icon">🍊</span><div class="alc-name">Коньяк</div><div class="alc-sub">Бренди, арманьяк</div></label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Ром"><div class="selected-badge">✓</div><span class="alc-icon">🍹</span><div class="alc-name">Ром</div><div class="alc-sub">Белый, тёмный</div></label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Джин"><div class="selected-badge">✓</div><span class="alc-icon">🌿</span><div class="alc-name">Джин</div><div class="alc-sub">Лондон Драй, крафт</div></label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Текила"><div class="selected-badge">✓</div><span class="alc-icon">🌵</span><div class="alc-name">Текила</div><div class="alc-sub">Серебряная, золотая</div></label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Пиво светлое"><div class="selected-badge">✓</div><span class="alc-icon">🍺</span><div class="alc-name">Пиво светлое</div><div class="alc-sub">Лагер, пилснер</div></label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Пиво тёмное"><div class="selected-badge">✓</div><span class="alc-icon">🍻</span><div class="alc-name">Пиво тёмное</div><div class="alc-sub">Портер, стаут</div></label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Ликёр"><div class="selected-badge">✓</div><span class="alc-icon">🍑</span><div class="alc-name">Ликёр</div><div class="alc-sub">Амаретто, Апероль</div></label>
+    <label class="alc-card"><input type="checkbox" name="alcohol" value="Не пью"><div class="selected-badge">✓</div><span class="alc-icon">🥤</span><div class="alc-name">Не пью</div><div class="alc-sub">Безалкогольное</div></label>
   </div>
   <p class="no-alc-note">Безалкогольные напитки будут в изобилии для всех 🌿</p>
 </section>
@@ -650,15 +217,13 @@
   <p class="submit-sub">Отправьте ваши предпочтения — мы обо всём позаботимся</p>
   <div class="validation-msg" id="val-msg">⚠️ Пожалуйста, заполните все поля: укажите имя и выберите горячее</div>
   <button type="submit" class="submit-btn" id="submit-btn">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-    </svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
     Отправить ответы
   </button>
   <div id="form-message">
-    <span class="msg-icon" id="msg-icon"></span>
-    <div class="msg-title" id="msg-title"></div>
-    <div id="msg-body"></div>
+    <span class="msg-icon" id="msg-icon">💌</span>
+    <div class="msg-title" id="msg-title">Спасибо!</div>
+    <div id="msg-body">Ваши ответы отправлены. До встречи на торжестве! 🥂</div>
   </div>
   <p class="privacy-note">🔒 Ваши данные используются только для организации торжества</p>
 </section>
@@ -666,7 +231,7 @@
 </form>
 
 <footer class="footer">
-  Сделано с ♥ для особенного дня &nbsp;·&nbsp; Алёна &amp; Роман, 2026
+  Сделано с ♥ для особенного дня &nbsp;·&nbsp; Алёна & Роман, 2026
 </footer>
 
 <script>
@@ -701,52 +266,24 @@
   document.querySelectorAll('.alc-card').forEach(card => {
     card.addEventListener('click', function() {
       this.classList.toggle('selected');
-      this.querySelector('input[type="checkbox"]').checked = !this.querySelector('input[type="checkbox"]').checked;
+      const checkbox = this.querySelector('input[type="checkbox"]');
+      checkbox.checked = !checkbox.checked;
     });
   });
 
-  document.getElementById('guestForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('guest-name').value.trim();
-    const food = document.querySelector('input[name="hot_dish"]:checked');
+  document.getElementById('guestForm').addEventListener('submit', function(e) {
+    const name = this.querySelector('input[name="name"]').value.trim();
+    const food = this.querySelector('input[name="hot_dish"]:checked');
     const valMsg = document.getElementById('val-msg');
     
     if (!name || !food) {
+      e.preventDefault();
       valMsg.classList.add('visible');
       document.getElementById('guest-form').scrollIntoView({ behavior: 'smooth' });
       return;
     }
     valMsg.classList.remove('visible');
-    
-    const btn = document.getElementById('submit-btn');
-    btn.disabled = true;
-    btn.textContent = 'Отправляем...';
-    
-    try {
-      const res = await fetch(this.action, {
-        method: 'POST',
-        body: new FormData(this)
-      });
-      
-      if (res.ok) {
-        document.getElementById('msg-icon').textContent = '💌';
-        document.getElementById('msg-title').textContent = 'Спасибо, ' + name + '!';
-        document.getElementById('msg-body').textContent = 'Ваши предпочтения успешно записаны. До встречи на торжестве! 🥂';
-        document.getElementById('form-message').className = 'success';
-        btn.style.display = 'none';
-        document.getElementById('form-message').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        throw new Error('Server error');
-      }
-    } catch (e) {
-      document.getElementById('msg-icon').textContent = '✅';
-      document.getElementById('msg-title').textContent = 'Спасибо, ' + name + '!';
-      document.getElementById('msg-body').textContent = 'Ваш ответ записан. До встречи на торжестве! 🥂';
-      document.getElementById('form-message').className = 'success';
-      btn.style.display = 'none';
-      document.getElementById('form-message').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+    document.getElementById('submit-btn').textContent = 'Отправляем...';
   });
 </script>
 
